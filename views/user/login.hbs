@@ -1,4 +1,4 @@
-<script src="user-helpers.js"></script>
+
 <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -10,6 +10,7 @@
 
                             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                             <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                            
                             <form action="/login" method="post">
                                 <div class="form-outline form-white mb-4">
                                     <input type="email" id="typeEmailX" class="form-control form-control-lg"
@@ -23,10 +24,10 @@
                                     <label>Password</label>
                                 </div>
 
-                                {{#if LF}}
+                                {{#if loginDetails.LF}}
                                 <em class="err" style="color: red;">password mismatch</em>
                                   {{else }}
-                                  {{#if mailErr}}
+                                  {{#if loginDetails.mailErr}}
                                   <em class="err" style="color: red;">invalid email or password</em>
                                       {{/if}}
                                 {{/if}}
@@ -46,9 +47,7 @@
                         </div>
 
                         <div>
-                            <p class="mb-0">Don't have an account? <a href="/signup"
-                                    class="text-white-50 fw-bold">SignUp</a>
-                            </p>
+                            <p class="mb-0">Don't have an account? <a href="/signup"class="text-white-50 fw-bold">SignUp</a> </p>
                         </div>
 
                     </div>
